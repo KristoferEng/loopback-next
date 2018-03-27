@@ -9,7 +9,7 @@ import {
   ModelMetadataHelper,
   RelationMetadata,
   RepositoryMetadata,
-} from '../../../../';
+} from '../../../../../';
 import {Customer} from '../models/customer.model';
 import {Order} from '../models/order.model';
 import {inject, Context} from '@loopback/core';

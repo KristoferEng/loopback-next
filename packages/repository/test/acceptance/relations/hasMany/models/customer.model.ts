@@ -3,7 +3,7 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-import {model, property, Entity, hasMany} from '../../../..';
+import {model, property, Entity, hasMany} from '../../../../../';
 import {Order} from './order.model';
 import {OrderRepository} from '../repositories/order.repository';
 

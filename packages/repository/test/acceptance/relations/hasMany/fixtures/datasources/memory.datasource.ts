@@ -1,4 +1,4 @@
-import {DataSourceConstructor, juggler} from '../../../../../src';
+import {DataSourceConstructor, juggler} from '../../../../../../src';
 
 // Copyright IBM Corp. 2017,2018. All Rights Reserved.
 // Node module: @loopback/repository

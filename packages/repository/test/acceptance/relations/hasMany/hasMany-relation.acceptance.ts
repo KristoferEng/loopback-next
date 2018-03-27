@@ -3,7 +3,7 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-import {DataSourceConstructor, FilterBuilder} from '../../..';
+import {DataSourceConstructor, FilterBuilder} from '../../../..';
 import {expect} from '@loopback/testlab';
 import {OrderRepository} from './repositories/order.repository';
 import {CustomerRepository} from './repositories/customer.repository';

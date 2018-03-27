@@ -3,7 +3,7 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-import {model, property, Entity} from '../../../..';
+import {model, property, Entity} from '../../../../../';
 
 @model()
 export class Order extends Entity {
