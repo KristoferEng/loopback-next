@@ -21,27 +21,37 @@ describe('hasMany relationship', () => {
       name: 'John Smith',
       slug: 'johnsmith@yahoo.com',
     });
-    c1.orders.create({
+    const order = await c1.orders.create({
+      // customerId should be enforced
       desc: 'order1 description',
       date: new Date().toISOString(),
+    });
+
+    let foundOrder = await orderRepo.findById(order.id);
+    expect(foundOrder).to.have.properties({
+      desc: 'order1 description',
       customerId: c1.getId(),
     });
-    let found = await customerRepo.findById(c1.id);
-    expect(found).to.have.properties({
+
+    let foundCustomer = await customerRepo.findById(c1.id);
+    expect(foundCustomer).to.have.properties({
       name: c1.name,
       email: c1.email,
       orders: [
         {
           desc: 'order1 description',
           customerId: c1.getId(),
+          id: order.id,
         },
       ],
     });
-    expect(c1).instanceof(Customer);
-    let foundOrder = await orderRepo.findById(c1.id);
-    expect(foundOrder).to.have.properties({
+    let orderViaCustomer = await foundCustomer.orders.find({
+      where: {customerId: foundCustomer.id},
+    });
+
+    expect(orderViaCustomer).to.have.properties({
       desc: 'order1 description',
-      customerId: c1.getId(),
+      customerId: foundCustomer.getId(),
     });
   });
 

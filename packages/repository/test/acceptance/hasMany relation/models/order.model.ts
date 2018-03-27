@@ -8,6 +8,12 @@ import {model, property, Entity} from '../../../..';
 @model()
 export class Order extends Entity {
   @property({
+    type: 'number',
+    id: true,
+  })
+  id?: number;
+
+  @property({
     type: 'string',
     required: true,
   })
@@ -21,7 +27,6 @@ export class Order extends Entity {
   @property({
     type: 'string',
     required: true,
-    id: true,
   })
   customerId: string;
 }
