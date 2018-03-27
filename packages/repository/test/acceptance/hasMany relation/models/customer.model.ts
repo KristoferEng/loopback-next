@@ -26,5 +26,5 @@ export class Customer extends Entity {
   })
   email: string;
 
-  @hasMany() orders: OrderRepository;
+  @hasMany() customerOrders: OrderRepository;
 }

@@ -3,7 +3,7 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-import {DataSourceConstructor} from '../../..';
+import {DataSourceConstructor, FilterBuilder} from '../../..';
 import {expect} from '@loopback/testlab';
 import {OrderRepository} from './repositories/order.repository';
 import {CustomerRepository} from './repositories/customer.repository';
@@ -33,7 +33,8 @@ describe('hasMany relationship', () => {
       customerId: c1.getId(),
     });
 
-    let foundCustomer = await customerRepo.findById(c1.id);
+    const includeFilter = new FilterBuilder().include('orders').filter;
+    let foundCustomer = await customerRepo.findById(c1.id, includeFilter);
     expect(foundCustomer).to.have.properties({
       name: c1.name,
       email: c1.email,
