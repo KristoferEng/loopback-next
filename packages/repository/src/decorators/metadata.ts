@@ -65,6 +65,14 @@ export class ModelMetadataHelper {
           meta,
           target,
         );
+        meta.relations = Object.assign(
+          <RelationMap>{},
+          MetadataInspector.getAllPropertyMetadata(
+            RELATIONS_KEY,
+            target.prototype,
+            options,
+          ),
+        );
         return meta;
       }
     }
