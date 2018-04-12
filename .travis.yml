@@ -27,6 +27,7 @@ jobs:
         - npm run bootstrap
       script:
         - cd loopback.io
+        - git pull
         - npm run fetch-readmes
         - bundle install
         - bundle exec jekyll build
