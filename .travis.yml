@@ -26,6 +26,7 @@ jobs:
       before_script:
         - npm run bootstrap
       script:
+        - cd loopback.io
         - npm run fetch-readmes
         - bundle exec jekyll build
       after_success: skip
