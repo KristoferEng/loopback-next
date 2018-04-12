@@ -11,6 +11,7 @@ import {
   PropertyMap,
 } from './model.decorator';
 import {ModelDefinition} from '../model';
+import {RELATIONS_KEY, RelationMap} from '.';
 
 export class ModelMetadataHelper {
   /**
@@ -61,7 +62,7 @@ export class ModelMetadataHelper {
           ),
         );
         MetadataInspector.defineMetadata(
-          MODEL_WITH_PROPERTIES_KEY.key,
+          MODEL_WITH_PROPERTIES_KEY,
           meta,
           target,
         );
