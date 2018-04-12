@@ -28,6 +28,7 @@ jobs:
       script:
         - cd loopback.io
         - npm run fetch-readmes
+        - bundle install
         - bundle exec jekyll build
       after_success: skip
       os:
