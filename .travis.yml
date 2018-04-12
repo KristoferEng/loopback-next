@@ -21,6 +21,16 @@ after_success:
 
 jobs:
   include:
+    - stage: loopback.io
+      gemfile: loopback.io/Gemfile
+      before_script:
+        - npm run bootstrap
+      script:
+        - npm run fetch-readmes
+        - bundle exec jekyll build
+      after_success: skip
+      os:
+        - linux
     - stage: commit linting
       before_install:
         - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi

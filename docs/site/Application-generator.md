@@ -8,6 +8,8 @@ permalink: /doc/en/lb4/Application-generator.html
 summary:
 ---
 
+# @loopback/cli
+
 ### Synopsis
 
 Creates a new LoopBack4 application using REST API.
